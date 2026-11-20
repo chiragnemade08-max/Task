@@ -1,0 +1,9 @@
+- [Auth architecture](auth-architecture.md) — PBKDF2 (not bcrypt), session tokens as random hex in DB, nodemailer for password reset
+- [Provider hierarchy](provider-hierarchy.md) — correct React context nesting order for this app
+- [Category system](category-system.md) — 20 categories replacing old subject system, backward-compat aliases
+- [Auth screen placement](auth-screen-placement.md) — AuthScreen must live in components/, not app/ (expo-router routing conflict)
+- [Metro FallbackWatcher ENOENT fix](metro-fallbackwatcher-enoent.md) — Replit workflow-log files race with Metro watcher; patch _watchdir with try-catch on fs.watch() to fix ENOENT crashes at startup
+- [Cloud sync for account data](cloud-sync-account-data.md) — a sync endpoint existing is not proof it's wired up; check startup + state-mutation call sites before trusting "data syncs to cloud"
+- [Notification and bonus state](notification-and-bonus-state.md) — device notification IDs must be regenerated after cloud restore; daily bonuses need persistent award dates
+- [Offline-first behavior](offline-first-behavior.md) — cached sessions and local study state remain usable offline; failed cloud writes queue for retry
+- [Expo SDK 57 configuration](expo-57-upgrade-notes.md) — configure splash assets through the plugin, omit `newArchEnabled`, and remove the obsolete Expo Asset HTTPS patch.
